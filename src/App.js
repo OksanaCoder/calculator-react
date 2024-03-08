@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import { evaluate } from "mathjs";
 
 function App() {
   const [input, setInput] = useState("");
@@ -7,7 +8,7 @@ function App() {
 
   const handleClick = (value) => {
     if (value === "=") {
-      setResult(eval(input).toString());
+      setResult(evaluate(input).toString());
     } else if (value === "C") {
       setInput("");
       setResult("");
